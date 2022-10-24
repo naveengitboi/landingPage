@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body 
+{
+    background-color: #F3EDE5;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/************** defaults *********************/
+:root 
+{
+    --mainHeding:3.5rem;
+    --yellowOrange:#F6B300;
+    --lightBlue:#88AED0;
+    --grayColor:#707070;
+    --greenColor:#133416;
+}
+a 
+{
+    text-decoration: none;
+    color: var(--grayColor);
+}
+p 
+{
+    color: var(--grayColor);
+}
+.HamBurgerMenu
+{
+    display: none;
+}
+
+
+/******************* styling starts *****************/
+.paddingBody 
+{
+    width: 70%;
+    padding: 1rem 0;
+}
+nav 
+{
+    display: flex;
+    padding: 1rem 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/********************* navlinks  ******************/
+.navLinks ul 
+{
+    display: flex;
+}
+.navLinks li 
+{
+    list-style-type: none;
+}
+.navLinks li a 
+{
+    padding: .85rem 1.85rem;
+    position: relative;
+}
+.liInfo
+{
+    background-color: white;
+    width: 30%;
+    padding: 1.85rem;
+    border-radius: .85rem;
+    display: none;
+    position: absolute;
+    z-index: 5;
+    transition: all 5s ease-in;
+   top: 80px;
+}
+
+.liInfoActive
+{
+    display: block;
+    transition: all 5s ease-in;
+}
+.subInfo
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .85rem 0;
+}
+.subInfoContent
+{
+    padding:0 .85rem ; 
+}
+.subInfoContent h3 
+{
+    font-size: 1rem;
+    color: black;
+}
+.subInfoContent p 
+{
+    color: var(--grayColor);
+    font-size: .95rem;
+}
+
+
+/***************** signinBox *********************/
+
+.signInBox a
+{ 
+    padding: .85rem 1.25rem;
+    border-radius: 0.25rem;
+}
+.tryingBox
+{
+    background-color: var(--greenColor);
+    color: white;
+}
+
+
+/******* Hero section *********/
+
+main
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5rem 0;
+}
+
+.mainHeading 
+{
+    font-size: var(--mainHeding);
+    padding: .85rem 0;
+}
+.mainHeading span 
+{
+    color: var(--yellowOrange);
+}
+.tryForFreeBtn
+{
+    margin: 1rem 0;
+    padding: .85rem 1.25rem;
+    outline: none;
+    border: none;
+    background-color: var(--greenColor);
+    color: white;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+.tryForFreeBtn:hover 
+{
+    cursor: pointer;
+}
+.ratingPara
+{
+    display: flex;
+    align-items: center;
+}
+.ratingPara img 
+{
+    margin: 0 .5rem;
+    width: 20px;
+}
+.heroImage
+{
+    width: 30%;
+}
+
+
+/*********** Footer Section **************/
+
+footer 
+{
+    padding: .85rem 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footerText
+{
+    text-align: center;
+}
+.footerImages
+{
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: .85rem 0;
+    margin: .85rem 0;
+}
+.footerImages img
+{
+    width: 140px;
+    margin: 0 .85rem ;
+}
+
+
+
+/************* responsive ************/
+
+@media screen and (min-width:1025px) and (max-width:1440px) {
+    :root
+    {
+        --mainHeding:2.95rem;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    :root 
+    {
+        --mainHeding:2.5rem;
+    }
+    .paddingBody
+    {
+        width: 85%;
+    }
+    .HamBurgerMenu 
+    {
+        display: block;
+        position: relative;
+
+    }
+    .navLinks
+    {
+        position: relative;
+    }
+    
+    .navLinkers
+    {
+       position: absolute;
+       flex-direction: column;
+       line-height: 3.5;  
+       background-color: rgb(255, 241, 215);
+       height: 300px;
+       width: 300px;
+       left: -100%;
+       padding: 2rem;
+       top: calc(-100% - 310px);
+       transition: all .85s ease;
+    }
+    .menuActive
+    {
+        top: 100%;
+    }
+
+    .liInfo 
+    {
+        min-width: 450px;
+    }
+
+    main
+    {
+        flex-direction: column;
+        text-align: center;
+    }
+    .ratingPara
+    {
+        display: block;
+        text-align: center;
+    }
+    .heroImage
+    {
+        width: 50%;
+        margin: 3rem 0;
+    }
+
+    .footerImages img
+    {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width:425px) {
+    :root 
+    {
+        --mainHeding:2.25rem;
+    }
+    .paddingBody
+    {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .signInBox a
+    { 
+        padding:.85rem ;
+        border-radius: 0.25rem;
+    }
+    .tryingBox
+    {
+        display: none;
+    }
+    main 
+    {
+        margin: 2.5rem 0 ;
+    }
+
+    .heroImage
+    {
+        width: 80%;
+        
+    }
+
+    .footerImages img
+    {
+        width: 70px;
+        
+    }
+}
